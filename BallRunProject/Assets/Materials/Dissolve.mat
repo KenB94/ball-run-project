@@ -51,7 +51,7 @@ Material:
     m_Floats:
     - Vector1_7FD5BE8A: 0
     - Vector1_AD1F2F0B: 50
-    - Vector1_DD1B6482: -0.009999985
+    - Vector1_DD1B6482: 0.02
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -74,7 +74,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - Color_AF32FF04: {r: 0.172549, g: 3.890196, b: 3.654902, a: 1}
+    - Color_AF32FF04: {r: 2.596859, g: 0, b: 0.04256955, a: 1}
     - _BaseColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
