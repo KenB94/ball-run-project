@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -531,7 +531,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 4.5905e-41, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1e-44, y: 0, z: 1.53e-43, w: 0.05078125}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1287,7 +1287,7 @@ PrefabInstance:
     - target: {fileID: 2349680133855217692, guid: f620e2693daa25f48a089eaebe9eee82,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 26
+      value: 25.5
       objectReference: {fileID: 0}
     - target: {fileID: 2349680133855217692, guid: f620e2693daa25f48a089eaebe9eee82,
         type: 3}

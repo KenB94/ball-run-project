@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6192605002964274668}
   - component: {fileID: 6192605002964274662}
   - component: {fileID: 7995214876823100472}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -111,9 +111,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6192605002964274664}
-  ForwardForce: 3000
-  SidewaysForce: 50
-  BackwardsForce: 50
+  col: {fileID: 6192605002964274668}
+  JumpForce: 2000
+  speed: 3000
+  groundLayers:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!135 &6192605002964274668
 SphereCollider:
   m_ObjectHideFlags: 0

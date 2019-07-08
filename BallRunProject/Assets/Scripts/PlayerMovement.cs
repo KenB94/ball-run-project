@@ -3,40 +3,49 @@
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb; // Rigidbody component reference to the asset named "Player".
-    public float ForwardForce; // A float variable to add forward force.
-    public float SidewaysForce; // A float variable to add force to either left or right.
-    public float BackwardsForce; // A float variable to add backwards force. 
+    public SphereCollider col;
+    public float JumpForce = 1f;
+    public float speed = 1f;
+    float moveHorizontal;
+    float moveVertical;
+    Vector3 movement;
+    public LayerMask groundLayers;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        col = GetComponent<SphereCollider>();
+    }
+
+    void Update()
+    {
+        movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+
+        if (isGrounded() && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce((Vector3.up * JumpForce) * Time.deltaTime, ForceMode.Impulse);
+        }
+
+        if (rb.position.y < -1f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+    }
 
     // "FixedUpdate" because it is messing with physics
     void FixedUpdate()
-    { 
-        // Get user input and add force to the direction
-        // the user wants to go to.
-        if (Input.GetKey(KeyCode.W))
-        {
-            rb.AddForce(0, 0, ForwardForce * Time.deltaTime);
-        }
+    {
+        moveCharacter(movement);
+    }
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            rb.AddForce(-SidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        }
+    // Check if the player is grounded
+    private bool isGrounded()
+    {
+        return Physics.CheckCapsule(col.bounds.center, new Vector3(col.bounds.center.x, col.bounds.min.y, col.bounds.center.z), col.radius * 0.9f, groundLayers);
+    }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            rb.AddForce(0, 0, -BackwardsForce * Time.deltaTime, ForceMode.VelocityChange);
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            rb.AddForce(SidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        }
-
-        
-
-        if (rb.position.y < -1f)
-        { 
-            FindObjectOfType<GameManager>().EndGame();
-        }
+    private void moveCharacter(Vector3 direction)
+    {
+        rb.AddForce((direction * speed) * Time.deltaTime);
     }
 }

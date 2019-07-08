@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ability : MonoBehaviour
+public class Dissolve : MonoBehaviour
 {
     // Toggle the dissolve shader on/off
     // when 'E' key is pressed
@@ -26,7 +26,7 @@ public class Ability : MonoBehaviour
     {
         if (dissolveMat.GetFloat(matRef) < 1)
         {
-            dissolveValue = dissolveValue + 0.01f;
+            dissolveValue += 0.002f;
             dissolveMat.SetFloat(matRef, dissolveValue);
         }
     }
@@ -35,7 +35,7 @@ public class Ability : MonoBehaviour
     {
         if (dissolveMat.GetFloat(matRef) > 0)
         {
-            dissolveValue = dissolveValue - 0.01f;
+            dissolveValue -= 0.002f;
             dissolveMat.SetFloat(matRef, dissolveValue);
         }
     }
