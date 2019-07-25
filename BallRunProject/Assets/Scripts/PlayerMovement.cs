@@ -46,6 +46,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void moveCharacter(Vector3 direction)
     {
-        rb.AddForce((direction * speed) * Time.deltaTime);
+        rb.AddForce((direction * speed) * Time.deltaTime, ForceMode.VelocityChange);
     }
 }

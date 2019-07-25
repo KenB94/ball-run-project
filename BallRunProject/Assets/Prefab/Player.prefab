@@ -112,8 +112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6192605002964274664}
   col: {fileID: 6192605002964274668}
-  JumpForce: 2000
-  speed: 3000
+  JumpForce: 1200
+  speed: 30
   groundLayers:
     serializedVersion: 2
     m_Bits: 1
